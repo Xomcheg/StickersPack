@@ -1,0 +1,477 @@
+// @import 'vars';
+@import 'global';
+// @import 'fonts';
+
+//--------------------------------------------------------------------------
+//START-----------------HEADER----------------------------------------------
+//--------------------------------------------------------------------------
+
+.header {
+    background-image: url(../images/header-slider/slide-1/slide-1-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 120px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .menu {
+        max-width: 565px;
+        width: 100%;
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__phone {
+        margin: 0 5px;
+    }
+
+
+    &__slider {
+        margin-top: 76px;
+    }
+
+
+    &__slider-inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__slider-item {
+        max-width: 45%;
+        width: 100%;
+    }
+
+
+    &__slider-text {
+        max-width: 645px;
+        width: 100%;
+    }
+
+    &__slider-title {
+        margin: 13px 0 34px;
+        position: relative;
+    }
+
+    &__slider-icon {
+        position: absolute;
+        right: 0;
+        top: -20px;
+    }
+
+
+    .slider-item__stickers{
+        margin-top: 100px;
+    }
+
+    .slider {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &__sticker {
+            position: relative
+        }
+
+        &__sticker-emotion {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 255px;
+                height: 131px;
+                background-image: url(../images/header-slider/slide-1/viking-main-emotion.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                top: -133px;
+                right: -40px;
+            }
+        }
+
+        &__sticker-point {
+            position: absolute;
+            left: -200px;
+            top: 0;
+
+
+
+            .sticker-point__layer {
+                position: absolute;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background-color: #C6C6C6;
+                right: -40px;
+                top: -5px;
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+
+
+
+        .sticker-point__2 {
+            top: 40px;
+        }
+
+        .sticker-point__3 {
+            top: 80px;
+        }
+
+        .sticker-point__4 {
+            top: 120px;
+        }
+
+        &__sticker-box {
+            display: flex;
+            margin-right: 80px;
+            margin-top: 85px;
+        }
+
+
+        .sticker-color+.sticker-color {
+            margin-left: 20px;
+        }
+
+    }
+
+    .slider-item__buttons{
+        margin-top: -150px;
+    }
+    &__slider-buttons {
+        max-width: 480px;
+        width: 100%;
+        display: flex;
+    }
+
+    .slider-btn + .slider-btn{
+        margin-left: 50px;
+    }
+
+    .slider-btn__link {
+        position: relative;
+        color: skyblue;
+        width: 139px;
+        height: 77px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        font-weight: bold;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 3px;
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/header-slider/slider-btn-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+    }
+}
+
+
+
+
+//--------------------------------------------------------------------------
+//END-----------------HEADER------------------------------------------------
+//--------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------
+//START-----------------CALCULATOR------------------------------------------
+//--------------------------------------------------------------------------
+
+.calculator {
+    text-align: center;
+
+    &__text {
+        max-width: 611px;
+        margin: 38px auto 96px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__box-left {
+        max-width: 436px;
+        width: 100%;
+        text-align-last: left;
+    }
+
+
+
+
+
+
+    &__stickers {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 5px;
+        padding: 30px 42px 0px 73px;
+        margin-top: 64px;
+
+    }
+
+    &__stickers-item {
+        margin-bottom: 22px;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+    }
+
+    &__stickers-main {
+        cursor: pointer;
+    }
+
+    &__main-img {
+        transition: .5s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__stickers-box {
+        display: none;
+        position: absolute;
+        top: -72px;
+        left: 41px;
+    }
+
+    &__stickers-inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 26px;
+        border-radius: 5px;
+        background-color: #D1D1D1;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-bottom-left-radius: 5px;
+            border-top: 25px solid #D1D1D1;
+            border-right: 25px solid transparent;
+        }
+    }
+
+    &__stickers-color {
+        cursor: pointer;
+
+        img {
+            transition: .5s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+
+        }
+    }
+
+    &__stickers-color+&__stickers-color {
+        margin-left: 7px;
+    }
+
+
+    .calculator__stickers-item.stickers-item--active {
+        z-index: 1;
+
+        .calculator__stickers-box {
+            display: block;
+        }
+
+        .calculator__stickers-item {
+            z-index: 2;
+        }
+
+        .calculator__main-img {
+            transform: scale(1.2);
+        }
+    }
+
+
+    .result__item-style {
+        width: 60px;
+        height: 60px;
+        border: 1px solid red;
+        background-color: skyblue;
+    }
+
+
+
+    &__result {
+        margin-top: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &+.calculator__result-item {
+            margin-top: 26px;
+        }
+    }
+
+
+    &__result-stickers {
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    &__result-stick {
+        background-image: url(../images/stickers/sticker-owerlay-scull.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 65px;
+        height: 70px;
+        position: relative;
+
+        &.result-stick--active {
+            background-image: none;
+        }
+
+        img {
+            width: 70px;
+            transition: .5s;
+
+
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+
+            img+.calculator__result-del {
+                display: block;
+            }
+        }
+
+        &+.calculator__result-stick {
+            margin-left: 15px;
+        }
+    }
+
+    &__result-del {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        border: 1px solid red;
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        display: none;
+        cursor: pointer;
+        pointer-events: auto
+    }
+
+    .calculator__result-stick.result-stick--active {
+        &:hover {
+            .calculator__result-del {
+                display: block;
+            }
+        }
+
+
+
+    }
+
+
+
+
+    &__result-buttons {
+        display: none;
+    }
+
+    &__result-inner {
+        display: flex;
+        width: 111px;
+        justify-content: space-between;
+        margin-left: 15px;
+    }
+
+    &__result-btn {
+        width: 50px;
+        height: 50px;
+        background-color: #04CFFE;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #FF0076;
+        }
+    }
+
+
+}
+
+
+
+
+
+//--------------------------------------------------------------------------
+//END-----------------CALCULATOR------------------------------------------
+//--------------------------------------------------------------------------
