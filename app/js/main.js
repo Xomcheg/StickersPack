@@ -1,92 +1,16 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
     const stickersParent = document.querySelector('.calculator__stickers'),
         resultParent = document.querySelector('.calculator__result'),
+        calculatorMainImg = document.querySelectorAll('.calculator__main-img'),
         stickers = document.querySelectorAll('.calculator__stickers-item');
     let resultStickers = document.querySelectorAll('.calculator__result-stick');
-
-
-    const testParent = document.querySelector('.calculator__result-stickers-test')
-
-
-    const stickersDB = {
-        sticker: []
-    };
-
-    testParent.innerHTML = "";
-
-
-
-    // for (let i = 0; i < 4; i++) {
-    //     stickersDB.sticker += `
-    //     <div class="calculator__result-stick "> 
-    //         <div class = "calculator__result-del" > 
-    //         </div> 
-    //     </div>`;
-    //     console.log(stickersDB.sticker);
-    // }
-
-
-    for (let i = 0; i < 5; i++) {
-        testParent.innerHTML += `
-        <div class="calculator__result-stick stick-test"> 
-            ${Math.floor(Math.random() * 100)}
-            <div class = "calculator__result-del" > 
-            </div> 
-        </div>`;
-        
-        // testParent.textContent.sort();
-    }
-    
-   let parentObj = document.querySelectorAll(".stick-test");
-
-    console.log(parentObj.nextSibling);
-
-    parentObj.forEach((item, i) => {
-        // console.log(item);
-    });
-
-
-    // function creatParent() {
-    //     testParent.forEach((item, i) => {
-    //         // i = 0;
-    //         if (i < 4) {
-    //             testParent.innerHTML += `
-    //     <div class="calculator__result-stick ">
-    //     ${i}
-    //         <div class = "calculator__result-del" > 
-            
-    //         </div> 
-    //     </div>`;
-
-    //         }
-    //         // i++;
-    //     })
-
-    // }
-    // creatParent();
-
-
-
-
-
-
-
-
-
-
-
-
     function removeClass() {
         stickers.forEach((item) => {
             item.classList.remove('stickers-item--active');
         });
     }
-
-
     function checkPack() {
         let pack = document.querySelectorAll('.calculator__result-stickers img'),
             resultButtons = document.querySelectorAll('.calculator__result-buttons');
@@ -102,12 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (pack.length >= 15) {
             resultButtons[2].style.display = 'block';
+            calculatorMainImg.forEach(item => {
+                item.style.pointerEvents ='none';
+                item.style.opacity = '.3';
+            });
         } else {
             resultButtons[2].style.display = 'none';
+            calculatorMainImg.forEach(item => {
+                item.style.pointerEvents ='auto';
+                item.style.opacity = '1';
+            });
         }
     }
-
     let i = 0;
+    let arrSticks = [];
     stickersParent.addEventListener('click', (event) => {
         let target = event.target;
         const parentItem = target.parentNode.parentNode;
@@ -118,22 +50,105 @@ document.addEventListener('DOMContentLoaded', function () {
         if (target.classList.contains('calculator__color-img')) {
             let colorItem = target.cloneNode(true);
             resultStickers[i].prepend(colorItem);
+            arrSticks[i] = colorItem;
             resultStickers[i].classList.add('result-stick--active');
-
             i++;
             checkPack();
         }
     });
-
-
     resultParent.addEventListener('click', (event) => {
         let target = event.target;
-
-        if (target.previousElementSibling.classList.contains('calculator__color-img')) {
-            target.previousElementSibling.remove();
-            target.parentNode.classList.remove('result-stick--active');
+        if (target.classList.contains('calculator__result-del')) {
+            let delStick = arrSticks.indexOf(target.previousElementSibling);
+            for (let i = 0; i < resultStickers.length; i++) {
+                let elem = resultStickers[i].children;
+                for (let i = 0; i < elem.length; i++) {
+                    if (elem[i].classList.contains('calculator__color-img')) {
+                        elem[i].remove();
+                        elem[i].parentNode.classList.remove('result-stick--active');
+                    }
+                }
+            }
+            arrSticks.splice(delStick, 1);
+            for (let i = 0, j = arrSticks.length; i < j; i++) {
+                resultStickers[i].prepend(arrSticks[i]);
+                resultStickers[i].classList.add('result-stick--active');
+            }
+            i = arrSticks.length;
+            checkPack();
         }
+
+        let item;
+
+        if (target.classList.contains('calculator__result-cleaning')) {
+            item = target.parentNode.parentNode.previousElementSibling;
+        } else if (target.classList.contains('calculator__result-cleaning-img')) {
+            item = target.parentNode.parentNode.parentNode.previousElementSibling;
+            console.log(item);
+        }
+        let elem = item.children;
+        for (let i = 0; i < elem.length; i++) {
+            let items = elem[i].children;
+            elem[i].classList.remove('result-stick--active');
+            items[0].remove();
+        }
+        if (item.classList.contains('first__pack')) {
+            arrSticks.splice(0, 5);
+        } else if (item.classList.contains('second__pack')) {
+            arrSticks.splice(5, 5);
+        } else if (item.classList.contains('third__pack')) {
+            arrSticks.splice(10, 5);
+        }
+
+        for (let i = 0, j = arrSticks.length; i < j; i++) {
+            resultStickers[i].prepend(arrSticks[i]);
+            resultStickers[i].classList.add('result-stick--active');
+        }
+
+        for (let i = arrSticks.length; i < resultStickers.length; i++) {
+            resultStickers[i].classList.remove('result-stick--active');
+        }
+
+        i = arrSticks.length;
+
+        checkPack();
+        // if (target.classList.contains('calculator__result-cleaning')) {
+        //     if (target.classList.contains('calculator__result-cleaning-img')){
+        //         // let item
+        //     }
+        //     item = target.parentNode.parentNode.previousElementSibling;
+        //     let elem = item.children;
+        //     console.log(elem);
+        //     for (let i = 0; i < elem.length; i++) {
+        //         let items = elem[i].children;
+        //         elem[i].classList.remove('result-stick--active');
+        //         items[0].remove();
+        //     }
+        //     if (item.classList.contains('first__pack')) {
+        //         arrSticks.splice(0, 5);
+        //     } else if(item.classList.contains('second__pack')){
+        //         arrSticks.splice(5, 5);
+        //     } else if(item.classList.contains('third__pack')){
+        //         arrSticks.splice(10, 5);
+        //     }
+
+        //     for (let i = 0, j = arrSticks.length; i < j; i++) {
+        //         resultStickers[i].prepend(arrSticks[i]);
+        //         resultStickers[i].classList.add('result-stick--active');
+        //     }
+
+        //     for (let i = arrSticks.length; i < resultStickers.length; i ++) {
+        //         resultStickers[i].classList.remove('result-stick--active');
+        //     }
+        //     i = arrSticks.length;
+
+        //     checkPack();
+        // }
     });
+
+
+
+
 
 
 
