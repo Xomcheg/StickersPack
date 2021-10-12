@@ -1,0 +1,836 @@
+// @import 'vars';
+@import 'global';
+// @import 'fonts';
+
+//--------------------------------------------------------------------------
+//START-----------------HEADER----------------------------------------------
+//--------------------------------------------------------------------------
+
+.header {
+    background-image: url(../images/header-slider/slide-1/slide-1-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 120px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        width: 100%;
+    }
+
+  
+
+    &__phone {
+        margin: 0 5px;
+    }
+
+
+    &__slider {
+        margin-top: 76px;
+    }
+
+
+    &__slider-inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__slider-item {
+        max-width: 45%;
+        width: 100%;
+    }
+
+
+    &__slider-text {
+        max-width: 645px;
+        width: 100%;
+    }
+
+    &__slider-title {
+        margin: 13px 0 34px;
+        position: relative;
+    }
+
+    &__slider-icon {
+        position: absolute;
+        right: 0;
+        top: -20px;
+    }
+
+
+    .slider-item__stickers {
+        margin-top: 100px;
+    }
+
+    .slider {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &__sticker {
+            position: relative
+        }
+
+        &__sticker-emotion {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 255px;
+                height: 131px;
+                background-image: url(../images/header-slider/slide-1/viking-main-emotion.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                top: -133px;
+                right: -40px;
+            }
+        }
+
+        &__sticker-point {
+            position: absolute;
+            left: -200px;
+            top: 0;
+
+            .sticker-point__layer {
+                position: absolute;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background-color: #C6C6C6;
+                right: -40px;
+                top: -5px;
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+
+        .sticker-point__2 {
+            top: 40px;
+        }
+
+        .sticker-point__3 {
+            top: 80px;
+        }
+
+        .sticker-point__4 {
+            top: 120px;
+        }
+
+        &__sticker-box {
+            display: flex;
+            margin-right: 80px;
+            margin-top: 85px;
+        }
+
+        .sticker-color+.sticker-color {
+            margin-left: 20px;
+        }
+
+    }
+
+    .slider-item__buttons {
+        margin-top: -150px;
+    }
+
+    &__slider-buttons {
+        max-width: 480px;
+        width: 100%;
+        display: flex;
+    }
+
+    .slider-btn+.slider-btn {
+        margin-left: 50px;
+    }
+
+    .slider-btn__link {
+        position: relative;
+        color: skyblue;
+        width: 139px;
+        height: 77px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        font-weight: bold;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 3px;
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/header-slider/slider-btn-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+    }
+}
+
+
+
+
+//--------------------------------------------------------------------------
+//END-----------------HEADER------------------------------------------------
+//--------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------
+//START-----------------PREVIEW---------------------------------------------
+//--------------------------------------------------------------------------
+.preview {
+    &__items {
+        display: grid;
+        grid-template-columns: 558/1400*100% 420/1400*100% 420/1400*100%;
+        grid-template-rows: 1fr 1fr;
+        // grid-column-gap: 10px; // отступы между колонками
+        grid-auto-rows: minmax(100px, auto);
+
+    }
+
+    &__item-third {
+        align-self: end;
+
+    }
+}
+
+// .preview {
+//     &__inner {
+//         width: 100%;
+//         position: relative;
+
+//         &::before {
+//             content: '';
+//             display: block;
+//             padding: 25%;
+//         }
+//     }
+
+//     &__items {
+//         border: 1px solid red;
+//         display: flex;
+//         justify-content: space-between;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         bottom: 0;
+//         right: 0;
+
+//     }
+
+
+
+//     &__items-first {
+//         max-width: 558px;
+//         height: 493px;
+//         width: 100%;
+//         background-color: green;
+
+//     }
+
+//     &__items-second {
+//         max-width: 50%;
+//         width: 100%;
+//         height: 378px;
+//         background-color: yellow;
+//         align-self: flex-end;
+//     }
+
+//     &__items-test {
+//         max-width: 50%;
+//         width: 100%;
+//         height: 378px;
+//         background-color: transparent;
+//         align-self: flex-end;
+//     }
+
+
+//     &__items-third {
+//         max-width: 50%;
+//         width: 100%;
+//         height: 378px;
+//         background-color: skyblue;
+//     }
+
+
+//     &__test {
+//         margin-top: 116px;
+//         display: flex;
+//         flex: 0 0 842/1400*100%;
+//         // flex-direction: column;
+//         flex-wrap: wrap;
+
+
+//     }
+
+// }
+
+
+
+//--------------------------------------------------------------------------
+//END-----------------PREVIEW-----------------------------------------------
+//--------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------
+//START-----------------CALCULATOR------------------------------------------
+//--------------------------------------------------------------------------
+
+.calculator {
+    text-align: center;
+
+    &__text {
+        max-width: 611px;
+        margin: 38px auto 96px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__box-left {
+        max-width: 436px;
+        width: 100%;
+        text-align-last: left;
+    }
+
+
+    &__stickers {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 5px;
+        padding: 30px 42px 0px 73px;
+        margin-top: 64px;
+
+    }
+
+    &__stickers-item {
+        margin-bottom: 22px;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+    }
+
+    &__stickers-main {
+        cursor: pointer;
+    }
+
+    &__main-img {
+        transition: .5s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__stickers-box {
+        width: 293px;
+        display: none;
+        position: absolute;
+        top: -72px;
+        left: 41px;
+    }
+
+    &__stickers-inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 26px;
+        border-radius: 5px;
+        background-color: #D1D1D1;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-bottom-left-radius: 5px;
+            border-top: 25px solid #D1D1D1;
+            border-right: 25px solid transparent;
+        }
+    }
+
+    &__stickers-color {
+        cursor: pointer;
+
+        img {
+            transition: .5s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+
+        }
+    }
+
+    &__stickers-color+&__stickers-color {
+        margin-left: 7px;
+    }
+
+
+    .calculator__stickers-item.stickers-item--active {
+        z-index: 1;
+
+        .calculator__stickers-box {
+            display: block;
+        }
+
+        .calculator__stickers-item {
+            z-index: 2;
+        }
+
+        .calculator__main-img {
+            transform: scale(1.2);
+        }
+    }
+
+
+    .result__item-style {
+        width: 60px;
+        height: 60px;
+        border: 1px solid red;
+        background-color: skyblue;
+    }
+
+
+
+    &__result {
+        margin-top: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &+.calculator__result-item {
+            margin-top: 26px;
+        }
+    }
+
+
+    &__result-stickers {
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    &__result-stick {
+        background-image: url(../images/stickers/sticker-owerlay-scull.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 65px;
+        height: 70px;
+        position: relative;
+
+        &.result-stick--active {
+            background-image: none;
+        }
+
+        img {
+            width: 70px;
+            transition: .5s;
+
+
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+
+            img+.calculator__result-del {
+                display: block;
+            }
+        }
+
+        &+.calculator__result-stick {
+            margin-left: 15px;
+        }
+    }
+
+    &__result-del {
+        position: absolute;
+        top: -20px;
+        right: 4px;
+        // border: 1px solid red;
+        // background-color: red;
+        width: 20px;
+        height: 20px;
+        display: none;
+        cursor: pointer;
+        z-index: 10000;
+
+        // pointer-events: auto;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 3px;
+            background-color: red;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .calculator__result-stick.result-stick--active {
+        &:hover {
+            .calculator__result-del {
+                display: block;
+            }
+        }
+
+
+
+    }
+
+
+
+
+    &__result-buttons {
+        display: none;
+        // display: block;
+    }
+
+    &__result-inner {
+        display: flex;
+        width: 111px;
+        justify-content: space-between;
+        margin-left: 15px;
+    }
+
+    &__result-btn {
+        width: 50px;
+        height: 50px;
+        background-color: #04CFFE;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+        cursor: pointer;
+        z-index: 1;
+
+        img {
+            z-index: 0;
+        }
+
+        &:hover {
+            background-color: #FF0076;
+        }
+    }
+
+
+    &__price-item{
+        position: relative;
+        z-index: 1;
+        font-size: 30px;
+        line-height: 36px;
+        color: #FFFFFF;
+        margin-top: 42px;
+        &::before{
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 307px;
+            height: 82px;
+            background-image: url(../images/stickers/price-bg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            top: -24px;
+            left: 53px;
+            z-index: -1;
+        }
+    }
+
+}
+
+
+
+
+
+//--------------------------------------------------------------------------
+//END-----------------CALCULATOR--------------------------------------------
+//--------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------
+//START-----------------DELIVERY--------------------------------------------
+//--------------------------------------------------------------------------
+
+.delivery {
+    text-align: center;
+    padding-top: 174px;
+    position: relative;
+    z-index: 1;
+    &__title {
+        margin-bottom: 38px;
+    }
+
+    &__text {
+        max-width: 850px;
+        margin: 0 auto 106px;
+        color: #C4C4C4;
+        line-height: 28px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    &__wrapper-title {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 33px;
+        margin-bottom: 20px;
+    }
+
+    &__wrapper-text {
+        color: #C4C4C4;
+        margin-bottom: 25px;
+    }
+
+    &__city {
+        max-width: 630px;
+
+    }
+
+    &__region {
+        max-width: 490px;
+    }
+
+    &__region-subtext {
+        margin-bottom: 20px;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 19px;
+    }
+
+    &__region-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 31px;
+    }
+
+    &__payment {
+        padding-top: 92px;
+    }
+
+    &__payment-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 41px;
+    }
+
+    &__payment-box {
+        display: flex;
+        justify-content: space-between;
+        max-width: 890px;
+        margin: 0 auto 61px;
+    }
+
+    &__payment-text {
+        padding: 62px 43px;
+        max-width: 970px;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 5px;
+    }
+}
+
+
+//--------------------------------------------------------------------------
+//END-----------------DELIVERY----------------------------------------------
+//--------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------
+//START---------------CONTACTS----------------------------------------------
+//--------------------------------------------------------------------------
+
+.contacts {
+    padding-top: 146px;
+    position: relative;
+    z-index: 1;
+
+    &__title {
+        margin-bottom: 65px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-align-last: left;
+    }
+
+    &__wrapper-box {
+        max-width: 920px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__wrapper-title {
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    &__wrapper-mail {
+        margin-top: 22px;
+    }
+
+    &__box {
+        max-width: 515px;
+        width: 100%;
+    }
+
+    &__phone-link,
+    &__mail-link,
+    &__box-text,
+    &__messangers-link {
+        font-size: 19px;
+        line-height: 28px;
+    }
+
+    &__phone-link,
+    &__mail-link,
+    &__messangers-link {
+        transition: .5s;
+
+        &:hover {
+            color: #04CFFE;
+        }
+    }
+
+    &__img{
+        width: 200px;
+    }
+
+    &__messangers{
+        margin-top: 44px;
+        max-width: 557px;
+        display: flex;
+        justify-content: space-between;
+    }
+  
+}
+
+
+//--------------------------------------------------------------------------
+//END-----------------CONTACTS----------------------------------------------
+//--------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------
+//START-----------------FOOTER----------------------------------------------
+//--------------------------------------------------------------------------
+
+.footer{
+    padding-top: 70px;
+    position: relative;
+    &__bg{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+       
+        line-height: 0;
+        img{
+           width: 100%;
+           height: 100%;
+           
+        }
+    }
+   
+    &__wrapper{
+        background-color: rgba(0, 0, 0, 0.46);
+        position: relative;
+        z-index: 1;
+        padding: 16px 0 8px;
+    }
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__menu{
+        align-self: center;
+        max-width: 670px;
+    }
+
+
+    &__item-second{
+        text-align: right;
+    }
+
+    &__text{
+        max-width: 185px;
+    }
+}
+
+
+//--------------------------------------------------------------------------
+//END-------------------FOOTER----------------------------------------------
+//--------------------------------------------------------------------------
