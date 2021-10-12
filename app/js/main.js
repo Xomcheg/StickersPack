@@ -27,14 +27,21 @@ document.addEventListener('DOMContentLoaded', function () {
         if (pack.length >= 15) {
             resultButtons[2].style.display = 'block';
             calculatorMainImg.forEach(item => {
+                let blockItem = document.createElement('div');
+                blockItem.classList.add('block-stick');
+                blockItem.innerHTML = `
+                <img src="images/stickers/stick-block-wasted-img.png" alt="">
+                `;
+                item.parentNode.parentNode.prepend(blockItem);
                 item.style.pointerEvents ='none';
-                item.style.opacity = '.3';
+                item.parentNode.style.opacity = '0.3';
             });
         } else {
             resultButtons[2].style.display = 'none';
             calculatorMainImg.forEach(item => {
                 item.style.pointerEvents ='auto';
                 item.style.opacity = '1';
+                // item.parentNode.parentNode.firstChild.remove();
             });
         }
     }
