@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="images/stickers/stick-block-wasted-img.png" alt="">
                 `;
                 item.parentNode.parentNode.prepend(blockItem);
-                item.style.pointerEvents ='none';
+                item.style.pointerEvents = 'none';
                 item.parentNode.style.opacity = '0.3';
             });
         } else {
             resultButtons[2].style.display = 'none';
             calculatorMainImg.forEach(item => {
-                item.style.pointerEvents ='auto';
+                item.style.pointerEvents = 'auto';
                 item.style.opacity = '1';
                 // item.parentNode.parentNode.firstChild.remove();
             });
@@ -158,7 +158,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    //--------------------------------------------------------------------------
+    //START-----------------MESSANGERS------------------------------------------
+    //--------------------------------------------------------------------------
 
+    let messangers = document.querySelector('.messangers');
+
+    // messangers.addEventListener('click', function(e){
+    //     let target = e.target;
+    //     if (target.classList.contains('messangers__main')){
+    //         messangers.classList.add('messangers--active');
+    //     } else {
+    //         removeMessangers();
+    //     }
+    // });
+
+    messangers.addEventListener('click', function() {
+        this.classList.add('messangers--active')
+    })
+    function removeMessangers() {
+        messangers.classList.remove('messangers--active');
+    }
+    // messangers.addEventListener('mouseout', function(){
+    //     messangers.classList.remove('messangers--active');
+    // })
+
+
+    //--------------------------------------------------------------------------
+    //END-------------------MESSANGERS------------------------------------------
+    //--------------------------------------------------------------------------
+   
+    // document.querySelector('body').addEventListener('click', function(e){
+        
+    //     let target = e.target;
+    //     if (!target.classList.contains('messangers--active')) {
+    //         console.log(target);
+    //         messangers.classList.remove('messangers--active');
+    //     }
+    // });
 
 
 });
