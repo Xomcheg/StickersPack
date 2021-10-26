@@ -589,6 +589,10 @@
     }
 
 
+    &__price{
+        display: inline-block;
+    }
+
     &__price-item {
         position: relative;
         z-index: 1;
@@ -608,7 +612,7 @@
             background-position: center;
             background-size: cover;
             top: -24px;
-            left: 53px;
+            left: -20px;
             z-index: -1;
         }
     }

@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
         calculatorMainImg = document.querySelectorAll('.calculator__main-img'),
         stickers = document.querySelectorAll('.calculator__stickers-item');
     let resultStickers = document.querySelectorAll('.calculator__result-stick');
+
     function removeClass() {
         stickers.forEach((item) => {
             item.classList.remove('stickers-item--active');
         });
     }
+
     function checkPack() {
         let pack = document.querySelectorAll('.calculator__result-stickers img'),
             resultButtons = document.querySelectorAll('.calculator__result-buttons');
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (pack.length >= 15) {
             resultButtons[2].style.display = 'block';
+
             calculatorMainImg.forEach(item => {
                 let blockItem = document.createElement('div');
                 blockItem.classList.add('block-stick');
@@ -33,18 +36,44 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="images/stickers/stick-block-wasted-img.png" alt="">
                 `;
                 item.parentNode.parentNode.prepend(blockItem);
-                item.style.pointerEvents ='none';
+                item.style.pointerEvents = 'none';
                 item.parentNode.style.opacity = '0.3';
             });
         } else {
             resultButtons[2].style.display = 'none';
-            calculatorMainImg.forEach(item => {
-                item.style.pointerEvents ='auto';
-                item.style.opacity = '1';
-                // item.parentNode.parentNode.firstChild.remove();
-            });
+            for (let i = 0; i < calculatorMainImg.length; i++) {
+
+
+                let elemParent = calculatorMainImg[i].parentNode.parentNode.children;
+                for (let i = 0; i < elemParent.length; i++) {
+                    if (elemParent[i].classList.contains('block-stick')) {
+                        console.log(elemParent[i]);
+                        elemParent[i].remove();
+                    }
+                }
+
+                calculatorMainImg[i].style.pointerEvents = 'auto';
+                calculatorMainImg[i].parentNode.style.opacity = '1';
+            }
         }
     }
+
+    // function clearStick() {
+
+    //     for(let i = 0; i < stickers.length; i++) {
+    //         let  = stickers[i].children;
+
+    //         console.log(itemParent);
+    //         for (let i = 0; i < itemParent.length; i++){
+    //             if (itemParent[i].classList.contains('block-stick')){
+    //                 console.log(itemParent[i]);
+    //                 // itemParent[i].remove();
+    //             }
+    //         }
+    //     }
+
+    // }
+
     let i = 0;
     let arrSticks = [];
     stickersParent.addEventListener('click', (event) => {
@@ -83,74 +112,47 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             i = arrSticks.length;
             checkPack();
+            // clearStick();
         }
 
         let item;
 
         if (target.classList.contains('calculator__result-cleaning')) {
             item = target.parentNode.parentNode.previousElementSibling;
+            removeStick(item);
         } else if (target.classList.contains('calculator__result-cleaning-img')) {
             item = target.parentNode.parentNode.parentNode.previousElementSibling;
-            console.log(item);
+            removeStick(item);
         }
-        let elem = item.children;
-        for (let i = 0; i < elem.length; i++) {
-            let items = elem[i].children;
-            elem[i].classList.remove('result-stick--active');
-            items[0].remove();
-        }
-        if (item.classList.contains('first__pack')) {
-            arrSticks.splice(0, 5);
-        } else if (item.classList.contains('second__pack')) {
-            arrSticks.splice(5, 5);
-        } else if (item.classList.contains('third__pack')) {
-            arrSticks.splice(10, 5);
-        }
-
-        for (let i = 0, j = arrSticks.length; i < j; i++) {
-            resultStickers[i].prepend(arrSticks[i]);
-            resultStickers[i].classList.add('result-stick--active');
-        }
-
-        for (let i = arrSticks.length; i < resultStickers.length; i++) {
-            resultStickers[i].classList.remove('result-stick--active');
-        }
-
-        i = arrSticks.length;
-
         checkPack();
-        // if (target.classList.contains('calculator__result-cleaning')) {
-        //     if (target.classList.contains('calculator__result-cleaning-img')){
-        //         // let item
-        //     }
-        //     item = target.parentNode.parentNode.previousElementSibling;
-        //     let elem = item.children;
-        //     console.log(elem);
-        //     for (let i = 0; i < elem.length; i++) {
-        //         let items = elem[i].children;
-        //         elem[i].classList.remove('result-stick--active');
-        //         items[0].remove();
-        //     }
-        //     if (item.classList.contains('first__pack')) {
-        //         arrSticks.splice(0, 5);
-        //     } else if(item.classList.contains('second__pack')){
-        //         arrSticks.splice(5, 5);
-        //     } else if(item.classList.contains('third__pack')){
-        //         arrSticks.splice(10, 5);
-        //     }
 
-        //     for (let i = 0, j = arrSticks.length; i < j; i++) {
-        //         resultStickers[i].prepend(arrSticks[i]);
-        //         resultStickers[i].classList.add('result-stick--active');
-        //     }
+        function removeStick(item) {
+            let elem = item.children;
+            for (let i = 0; i < elem.length; i++) {
+                let items = elem[i].children;
+                elem[i].classList.remove('result-stick--active');
+                items[0].remove();
+            }
+            if (item.classList.contains('first__pack')) {
+                arrSticks.splice(0, 5);
+            } else if (item.classList.contains('second__pack')) {
+                arrSticks.splice(5, 5);
+            } else if (item.classList.contains('third__pack')) {
+                arrSticks.splice(10, 5);
+            }
 
-        //     for (let i = arrSticks.length; i < resultStickers.length; i ++) {
-        //         resultStickers[i].classList.remove('result-stick--active');
-        //     }
-        //     i = arrSticks.length;
+            for (let i = 0, j = arrSticks.length; i < j; i++) {
+                resultStickers[i].prepend(arrSticks[i]);
+                resultStickers[i].classList.add('result-stick--active');
+            }
 
-        //     checkPack();
-        // }
+            for (let i = arrSticks.length; i < resultStickers.length; i++) {
+                resultStickers[i].classList.remove('result-stick--active');
+            }
+
+            i = arrSticks.length;
+        }
+
     });
 
 
