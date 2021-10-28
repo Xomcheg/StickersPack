@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             i = arrSticks.length;
             checkPack();
-            // clearStick();
         }
 
         let item;
