@@ -57,11 +57,20 @@ a {
 }
 
 .menu {
-    max-width: 565px;
+    max-width: 623px;
     width: 100%;
 
     &__list {
         display: flex;
         justify-content: space-between;
+    }
+
+    &__link{
+       @extend %maler-main; 
+       transition: .5s;
+       &:hover{
+        color: #3FFFFF;
+        text-shadow: 0px 4px 9px #07A9D2;
+       }
     }
 }
