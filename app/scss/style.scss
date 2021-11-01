@@ -866,6 +866,71 @@
 //--------------------------------------------------------------------------
 
 
+//--------------------------------------------------------------------------
+//START--------------------BOX----------------------------------------------
+//--------------------------------------------------------------------------
+
+.box{
+    position: fixed;
+    bottom: 100px;
+    right: 80px;
+    border: 1px solid red;
+
+    &__main{
+        width: 53px;
+        height: 53px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .5s;
+        margin-bottom: 8px;
+        &:hover{
+            background-color: #3FFFFF;
+        }
+    }
+
+    &__items{
+        height:0;
+        overflow: hidden;
+    }
+    &__items-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__item{
+        line-height: 0;
+        & + &{
+            margin-top: 17px;
+        }
+    }
+
+    &__item-link{
+        line-height: 0;
+    }
+    
+    &__item-img{
+        fill: #fff;
+        transition: .5s;
+        &:hover{
+            fill: #3FFFFF;
+        }
+    }
+
+    &.box--active{
+        .box__main{
+            border: 4px solid green;
+        }
+    }
+}
+
+//--------------------------------------------------------------------------
+//END----------------------BOX----------------------------------------------
+//--------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------
 //START-----------------FOOTER----------------------------------------------

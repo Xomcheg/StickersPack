@@ -157,6 +157,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    //--------------------------------------------------------------------------
+    //START--------------------BOX----------------------------------------------
+    //--------------------------------------------------------------------------
+
+    let box = document.querySelector('.box'),
+        boxMain = document.querySelector('.box__main');
+
+    boxMain.addEventListener('click', function (e) {
+        let target = e.target;
+        console.log(target);
+        if (target.classList.contains('box__main--active')){
+            target.classList.remove('box__main--active');
+            box.classList.remove('box--active');
+        } else {
+            target.classList.add('box__main--active');
+            box.classList.add('box--active');
+        }
+        
+    });
+
+    //--------------------------------------------------------------------------
+    //END----------------------BOX----------------------------------------------
+    //--------------------------------------------------------------------------
 
 
 
