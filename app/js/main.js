@@ -1,6 +1,38 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+    //--------------------------------------------------------------------------
+    //START--------------------HEADER SLIDER------------------------------------
+    //--------------------------------------------------------------------------
+
+    const sliderBoxPoint = document.querySelectorAll('.slider-box__point');
+            
+    sliderBoxPoint.forEach(function(item){
+        item.addEventListener('click', function() {
+            if(item.parentNode.classList.contains('item-point--active')){
+                console.log('verno');
+                item.parentNode.classList.remove('item-point--active');
+            } else {
+                item.parentNode.classList.add('item-point--active');
+            }
+            
+            
+        });
+    });
+
+
+    //--------------------------------------------------------------------------
+    //END----------------------HEADER SLIDER------------------------------------
+    //--------------------------------------------------------------------------
+
+
+
+
+
     const stickersParent = document.querySelector('.calculator__stickers'),
         resultParent = document.querySelector('.calculator__result'),
         calculatorMainImg = document.querySelectorAll('.calculator__main-img'),
@@ -162,21 +194,42 @@ document.addEventListener('DOMContentLoaded', function () {
     //--------------------------------------------------------------------------
 
     let box = document.querySelector('.box'),
-        boxMain = document.querySelector('.box__main');
+        boxMain = document.querySelector('.box__main'),
+        boxMainImg = document.querySelector('.box__main-img');
 
     boxMain.addEventListener('click', function (e) {
         let target = e.target;
         console.log(target);
-        if (target.classList.contains('box__main--active')){
+        if (target.classList.contains('box__main--active')) {
             target.classList.remove('box__main--active');
+            boxMain.classList.remove('box__main--active');
+            boxMainImg.classList.remove('box__main--active');
             box.classList.remove('box--active');
-        } else {
+            animateItems();
+        } else if (target.classList.contains('box__main-img')) {
             target.classList.add('box__main--active');
+            boxMain.classList.add('box__main--active');
+            box.classList.add('box--active');
+        } else {
+            boxMainImg.classList.add('box__main--active');
+            boxMain.classList.add('box__main--active');
             box.classList.add('box--active');
         }
-        
+
+
     });
 
+
+    // let  = setInterval(function(){
+    //     console.log('verno');
+    // },1000);
+
+
+
+
+    function animateItems() {
+        console.log('verno');
+    }
     //--------------------------------------------------------------------------
     //END----------------------BOX----------------------------------------------
     //--------------------------------------------------------------------------
