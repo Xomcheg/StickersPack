@@ -262,7 +262,8 @@
 .preview {
     padding-top: 161px;
     position: relative;
-    &::before{
+
+    &::before {
         content: url(../images/preview/preview-item-bg-3.png);
         position: absolute;
         z-index: -1;
@@ -288,26 +289,28 @@
             align-self: start;
         }
 
-        &:hover{
-            .preview__item-icon{
+        &:hover {
+            .preview__item-icon {
                 background-color: #3FFFFF;
             }
-            .preview__item-text{
+
+            .preview__item-text {
                 color: #3FFFFF;
             }
         }
     }
 
 
-    &__item-first{
-        &::before{
+    &__item-first {
+        &::before {
             content: url(../images/preview/preview-item-bg-1.png);
             position: absolute;
             right: -54px;
             top: 231px;
             z-index: -1;
         }
-        &::after{
+
+        &::after {
             content: url(../images/preview/preview-item-bg-2.png);
             position: absolute;
             right: -74px;
@@ -369,7 +372,7 @@
         bottom: 54px;
     }
 
-    .item-box__second{
+    .item-box__second {
         max-width: 385px;
     }
 
@@ -380,7 +383,7 @@
         line-height: 33px;
         @extend %mont-light;
         transition: .5s ease-in-out;
-       
+
     }
 
     &__item-icon {
@@ -393,8 +396,10 @@
         background-color: #fff;
         transition: .5s ease-in-out;
     }
-    &__item-arrow{
-        fill: #000;;           
+
+    &__item-arrow {
+        fill: #000;
+        ;
     }
 }
 
@@ -411,14 +416,43 @@
 .calculator {
     text-align: center;
     padding-top: 200px;
+    padding-bottom: 180px;
+    position: relative;
+
+    &::before {
+        content: url(../images/stickers/calculator-bg.png);
+        position: absolute;
+        right: 0;
+        bottom: -180px;
+        z-index: -1;
+    }
+
+    &::after {
+        content: url(../images/stickers/calculator-bg-2.png);
+        position: absolute;
+        top: 10px;
+        right: 0px;
+    }
 
     &__text {
-        max-width: 811px;
+        max-width: 650px;
         margin: 0 auto;
         position: relative;
-        &::before{
-            content:url()
+        @extend %mont-regular;
+        font-size: 17px;
+        line-height: 25px;
+        color: #FEFEFE;
+
+        &::before {
+            content: url(../images/stickers/calculator-text-bg.png);
+            width: 895px;
+            position: absolute;
+            top: 15px;
+            margin: 0 auto;
+            left: -110px;
+            z-index: -1;
         }
+
         padding: 44px 0 107px;
     }
 
@@ -661,17 +695,10 @@
                 display: block;
             }
         }
-
-
-
     }
-
-
-
 
     &__result-buttons {
         display: none;
-        // display: block;
     }
 
     &__result-inner {
@@ -701,7 +728,6 @@
             background-color: #FF0076;
         }
     }
-
 
     &__price {
         display: inline-block;
@@ -741,8 +767,9 @@
         border-bottom-left-radius: 30px;
         margin-top: 40px;
         color: #fff;
-    }
+        cursor: pointer;
 
+    }
 }
 
 
@@ -761,7 +788,6 @@
 
 .delivery {
     text-align: center;
-    padding-top: 174px;
     position: relative;
     z-index: 1;
 
@@ -773,7 +799,10 @@
         max-width: 850px;
         margin: 0 auto 106px;
         color: #C4C4C4;
-        line-height: 28px;
+        line-height: 25px;
+        @extend %mont-regular;
+        font-size: 17px;
+        color: #C4C4C4;
     }
 
     &__wrapper {
@@ -783,7 +812,7 @@
     }
 
     &__wrapper-title {
-        font-weight: 600;
+        @extend %mont-semiBold;
         font-size: 22px;
         line-height: 33px;
         margin-bottom: 20px;
@@ -792,6 +821,9 @@
     &__wrapper-text {
         color: #C4C4C4;
         margin-bottom: 25px;
+        color: #C4C4C4;
+        font-size: 17px;
+        @extend %mont-regular;
     }
 
     &__city {
@@ -808,8 +840,9 @@
     }
 
     &__price {
-        font-weight: 600;
+       @extend %mont-semiBold;
         font-size: 19px;
+        line-height: 28px;
     }
 
     &__region-box {
