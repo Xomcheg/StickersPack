@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
     //--------------------------------------------------------------------------
 
     const sliderBoxPoint = document.querySelectorAll('.slider-box__point');
-            
-    sliderBoxPoint.forEach(function(item){
-        item.addEventListener('click', function() {
-            if(item.parentNode.classList.contains('item-point--active')){
+
+    sliderBoxPoint.forEach(function (item) {
+        item.addEventListener('click', function () {
+            if (item.parentNode.classList.contains('item-point--active')) {
                 console.log('verno');
                 item.parentNode.classList.remove('item-point--active');
             } else {
                 item.parentNode.classList.add('item-point--active');
             }
-            
-            
+
+
         });
     });
 
@@ -234,8 +234,17 @@ document.addEventListener('DOMContentLoaded', function () {
     //END----------------------BOX----------------------------------------------
     //--------------------------------------------------------------------------
 
-
-
-
-
+ 
 });
+
+    // $('.header__slider').slick({
+    //     slidesToShow: 1,
+    //     slideToScroll: 1,
+    // });
+  
+   
+    $(function(){
+        $('.header__slider').slick({
+
+        });
+    });

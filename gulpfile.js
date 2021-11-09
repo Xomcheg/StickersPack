@@ -61,7 +61,9 @@ function images() {
 function scripts() {
     return src([
             'node_modules/jquery/dist/jquery.js',
+            'node_modules/slick-carousel/slick/slick.min.js',
             'app/js/main.js' // файл который создаем мы, обычно подключается самым последним, 
+
         ])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
@@ -70,7 +72,10 @@ function scripts() {
 }
 
 function styles() {
-    return src('app/scss/style.scss') //получаем фаил style.scss
+    return src([
+        'app/scss/style.scss',
+        'node_modules/slick-carousel/slick/slick.css',
+    ]) //получаем фаил style.scss
         .pipe(scss({
             outputStyle: 'compressed'
         })) //минимфицируем style.scss 'expanded' - наоборот устанавливает все пробелы и табы
@@ -92,7 +97,7 @@ function build() {
         ], {
             base: 'app'
         })
-        .pipe(dest('dist'))
+        .pipe(dest('dist'));
 }
 
 
