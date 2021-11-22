@@ -245,6 +245,14 @@ document.addEventListener('DOMContentLoaded', function () {
    
     $(function(){
         $('.header__slider').slick({
-
+            // dots: true,
+            arrows: false,
+            asNavFor: '.slider-nav',
+            
         });
+    });
+    $('.slider-nav').slick({ // настройка навигации
+        slidesToShow: 3, // указываем что нужно показывать 3 навигационных изображения
+        asNavFor: '.header__slider', // указываем что это навигация для блока выше
+        focusOnSelect: true // указываем что бы слайделось по клику
     });

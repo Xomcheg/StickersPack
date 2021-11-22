@@ -76,6 +76,7 @@
         position: relative;
         text-transform: uppercase;
         z-index: 0;
+        margin-left: 50px;
 
         &::before {
             content: '';
@@ -246,6 +247,29 @@
             color: #3FFFFF;
             border-color: #3FFFFF;
         }
+    }
+
+
+    .slider-nav {
+        margin: 0 auto;
+        margin-top: 32px;
+        &__item + &__item{
+            margin-left: 22px;
+        }
+
+
+       
+    }
+    .slider-nav__item-img{
+        transition: .5s;
+    }
+    .slider-nav__item.slick-current {
+        .slider-nav__item-img{
+            transform: scale(1.5);
+        }
+    }
+    .slick-list{
+        width: 100%;
     }
 }
 
@@ -840,7 +864,7 @@
     }
 
     &__price {
-       @extend %mont-semiBold;
+        @extend %mont-semiBold;
         font-size: 19px;
         line-height: 28px;
     }
@@ -1103,8 +1127,3 @@
 //--------------------------------------------------------------------------
 //END-------------------FOOTER----------------------------------------------
 //--------------------------------------------------------------------------
-
-
-
-
-
