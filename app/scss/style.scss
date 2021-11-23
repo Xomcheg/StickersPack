@@ -224,9 +224,10 @@
         max-width: 480px;
         width: 100%;
         display: flex;
+        justify-content: space-between;
     }
 
-    .slider-btn+.slider-btn {
+    .slider-btn + .slider-btn {
         margin-left: 50px;
     }
 
@@ -253,12 +254,15 @@
     .slider-nav {
         margin: 0 auto;
         margin-top: 32px;
-        &__item + &__item{
-            margin-left: 22px;
+        max-width: 200px;
+        margin: 0 auto;
+        div{
+            transform: none!important;
         }
+    }
 
-
-       
+    .slider-nav__item + .slider-nav__item{
+        // margin-left: 10px;
     }
     .slider-nav__item-img{
         transition: .5s;
@@ -268,8 +272,10 @@
             transform: scale(1.5);
         }
     }
-    .slick-list{
-        width: 100%;
+    .slick-track{
+        padding: 10px 0;
+        margin-left: 25px;
+        // border: 1px solid red;
     }
 }
 
@@ -1023,6 +1029,7 @@
     &__items {
         height: 0;
         overflow: hidden;
+        transition: .5s;
     }
 
     &__items-wrapper {
@@ -1033,7 +1040,7 @@
 
     &__item {
         line-height: 0;
-
+        opacity: 0;
         &+& {
             margin-top: 17px;
         }
@@ -1060,7 +1067,29 @@
     &.box--active {
         .box {
             &__wrapper {
-                height: 150px;
+                height: 230px;
+            }
+            &__items{
+                height: 163px;
+            }
+            &__item-first{
+                animation: showBoxItem 1s;
+                animation-delay: .5s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in-out;
+                
+            }
+            &__item-second{
+                animation: showBoxItem 1s;
+                animation-delay: .75s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in-out;
+            }
+            &__item-third{
+                animation: showBoxItem 1s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in-out;
             }
         }
 

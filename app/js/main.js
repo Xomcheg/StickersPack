@@ -220,9 +220,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // let  = setInterval(function(){
-    //     console.log('verno');
-    // },1000);
 
 
 
@@ -234,25 +231,26 @@ document.addEventListener('DOMContentLoaded', function () {
     //END----------------------BOX----------------------------------------------
     //--------------------------------------------------------------------------
 
- 
+
 });
 
-    // $('.header__slider').slick({
-    //     slidesToShow: 1,
-    //     slideToScroll: 1,
-    // });
-  
+
+
+
+$(function () {
+    $('.header__slider').slick({
+        // dots: true,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav',
+        speed: 1000,
+        easing: 'easy-in-out'
+    });
+});
+$('.slider-nav').slick({ // настройка навигации
+    slidesToShow: 3, // указываем что нужно показывать 3 навигационных изображения
+    // slidesToScroll: 1,
+    asNavFor: '.header__slider', // указываем что это навигация для блока выше
+    focusOnSelect: true, // указываем что бы слайделось по клику
    
-    $(function(){
-        $('.header__slider').slick({
-            // dots: true,
-            arrows: false,
-            asNavFor: '.slider-nav',
-            
-        });
-    });
-    $('.slider-nav').slick({ // настройка навигации
-        slidesToShow: 3, // указываем что нужно показывать 3 навигационных изображения
-        asNavFor: '.header__slider', // указываем что это навигация для блока выше
-        focusOnSelect: true // указываем что бы слайделось по клику
-    });
+});
