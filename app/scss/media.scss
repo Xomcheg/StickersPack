@@ -10,7 +10,7 @@
         padding-top: 10px;
 
         .header__info {
-            max-width: 650px;
+            max-width: 670px;
         }
 
         &__logo-img {
@@ -27,17 +27,115 @@
 
         .header__phone-link {
             font-size: 14px;
-            letter-spacing: -0.1em;
+            // letter-spacing: -0.1em;
         }
 
         .header__bascet-link {
-            width: 30px;
+            width: 25px;
+            height: 25px;
         }
 
         .header__bascet-number {
             width: 25px;
             height: 25px;
             font-size: 15px;
+            top: -8px;
+            right: -10px;
+        }
+    }
+
+    //--------------------------------------------------------------------------
+    //END-------------------HEADER----------------------------------------------
+    //--------------------------------------------------------------------------
+}
+
+
+
+@media (max-width: 890px) {
+
+
+    //--------------------------------------------------------------------------
+    //START-----------------HEADER----------------------------------------------
+    //--------------------------------------------------------------------------
+
+    .header {
+
+        .header__info {
+            max-width: 210px;
+        }
+
+        .menu {
+            width: 26px;
+            order: 1;
+            margin-top: 4px;
+        }
+
+        .menu__list {
+            display: none;
+        }
+
+        .menu__btn {
+            display: block;
+        }
+
+    }
+
+    //--------------------------------------------------------------------------
+    //END-------------------HEADER----------------------------------------------
+    //--------------------------------------------------------------------------
+}
+
+
+
+@media (max-width: 420px) {
+    //--------------------------------------------------------------------------
+    //START-----------------HEADER----------------------------------------------
+    //--------------------------------------------------------------------------
+
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+
+        .header__info {
+            max-width: 200px;
+        }
+
+        &__logo-img {
+            max-width: 75px;
+        }
+
+        .menu {
+            &__btn {
+                max-width: 23px;
+            }
+
+            &__btn-line {
+                max-width: 23px;
+
+                &::before,
+                &::after {
+                    width: 23px;
+                }
+            }
+        }
+
+        .header__phone {
+            margin-right: 0;
+        }
+
+        .header__bascet-link {
+            width: 23px;
+            height: 23px;
+        }
+
+        .header__bascet-number {
+            width: 20px;
+            height: 20px;
+            font-size: 13px;
+            top: -8px;
+            right: -10px;
         }
     }
 

@@ -27,6 +27,7 @@
     &__info {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         max-width: 890px;
         width: 100%;
     }
@@ -38,7 +39,7 @@
     &__phone-link {
         @extend %maler-main;
         transition: .5s;
-        letter-spacing: -0.05em;
+        letter-spacing: 0.02em;
 
         &:hover {
             color: #3FFFFF;
@@ -49,6 +50,10 @@
     &__bascet {
         position: relative;
         margin-right: 8px;
+    }
+
+    &__bascet-link{
+        display: flex;
     }
 
     &__bascet-number {

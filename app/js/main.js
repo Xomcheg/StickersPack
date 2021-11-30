@@ -239,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(function () {
     $('.header__slider').slick({
-        // dots: true,
         arrows: false,
         fade: true,
         asNavFor: '.slider-nav',
