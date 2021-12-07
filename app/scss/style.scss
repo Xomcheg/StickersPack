@@ -337,11 +337,17 @@
     position: relative;
 
     &::before {
-        content: url(../images/preview/preview-item-bg-3.png);
+        content: '';
+        width: 510px;
+        height: 528px;
+        background-image: url(../images/preview/preview-item-bg-3.png);
+        background-position: center right;
+        background-size: cover;
         position: absolute;
         z-index: -1;
-        bottom: -150px;
+        bottom: -230px;
         left: 0;
+        transition: .5s;
     }
 
     &__items {
@@ -499,7 +505,14 @@
     }
 
     &::after {
-        content: url(../images/stickers/calculator-bg-2.png);
+        // content: url(../images/stickers/calculator-bg-2.png);
+        content: '';
+        width: 364px;
+        height: 427px;
+        background-image: url(../images/stickers/calculator-bg-2.png);
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: cover;
         position: absolute;
         top: 10px;
         right: 0px;
