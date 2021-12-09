@@ -147,8 +147,13 @@
         position: relative;
     }
 
-    .slider-box__image {
+
+    .slider-box__img{
         max-width: 289px;
+    }
+
+    .slider-box__image {
+        // max-width: 289px;
     }
 
     .slider-box__item {
